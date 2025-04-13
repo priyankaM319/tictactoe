@@ -1,0 +1,144 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff6f61, #d4a5a5); /* Linear gradient */
+    color: white;
+}
+
+.game-container {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Board and Cells */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Black background for cells */
+    border: 2px solid #ccc;
+    font-size: 3rem;
+    color: white; /* Text color for X and O */
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cell:hover {
+    background-color: #444; /* Slight hover effect */
+}
+
+.reset, .new-game {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+}
+
+.reset:hover, .new-game:hover {
+    background-color: #45a049;
+}
+
+.status {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* Result Screen */
+.result-screen {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 300px;
+}
+
+#result-message {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.new-game {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.new-game:hover {
+    background-color: #d45b4b;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .cell {
+        font-size: 2.5rem;
+    }
+
+    .reset {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .status {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .board {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5px;
+    }
+
+    .cell {
+        font-size: 2rem;
+    }
+}
